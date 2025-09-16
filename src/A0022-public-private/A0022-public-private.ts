@@ -1,6 +1,6 @@
 
 export class Empresa {
-    public readonly nome: string; // public não necessário, é o padrão
+    readonly nome: string; // public não necessário, é o padrão
     private readonly colaboradores: Colaborador[] = [];
     protected readonly cnpj: string;
 
@@ -31,10 +31,7 @@ const empresa01 = new Empresa('19SL', '11.111.111/0001-11');
 const colaborador01 = new Colaborador('João', 'Silva');
 const colaborador02 = new Colaborador('Maria', 'Oliveira');
 const colaborador03 = new Colaborador('José', 'Santos');
-
 empresa01.adicionarColaborador(colaborador01);
 empresa01.adicionarColaborador(colaborador02);
 empresa01.adicionarColaborador(colaborador03);
-
 console.log(empresa01);
-empresa01.mostrarColaboradores();
