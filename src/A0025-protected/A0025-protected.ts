@@ -47,5 +47,7 @@ const colaborador03 = new Colaborador('José', 'Santos');
 empresa01.adicionarColaborador(colaborador01);
 empresa01.adicionarColaborador(colaborador02);
 empresa01.adicionarColaborador(colaborador03);
-//empresa01.pop();
+
+const colaboradorRemovido = empresa01.popColaborador();
+console.log(colaboradorRemovido);
 console.log(empresa01);
