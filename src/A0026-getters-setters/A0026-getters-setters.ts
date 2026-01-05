@@ -4,24 +4,19 @@ export class Pessoa {
         private nome: string,
         private sobrenome: string,
         private idade: number,
-        private cpf: string,
+        private _cpf: string,
     ) {}
 
-    getNome(): string {
-        return this.nome;
+    set cpf(cpf: string) {
+        this._cpf = cpf;
     }
 
-    getSobrenome(): string {
-        return this.sobrenome;
-    }
-
-    getCpf(): string {
-        return this.cpf.replace(/\D/g, '');
+    get cpf(): string {
+        return this._cpf.replace(/\D/g, '');
     }
 }
 
 const pessoa = new Pessoa('Vinicius', 'Dilly', 28, '123.456.789-00');
 
-console.log(pessoa.getNome());
-console.log(pessoa.getSobrenome());
-console.log(pessoa.getCpf());
+pessoa.cpf = '123.456.789-19';
+console.log(pessoa.cpf);
