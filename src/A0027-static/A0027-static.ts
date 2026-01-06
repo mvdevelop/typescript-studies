@@ -23,6 +23,8 @@ export class Pessoa {
 
 const pessoa01 = new Pessoa('Vinicius', 'Dilly', 28, '123.456.789-19');
 const pessoa02 = Pessoa.criaPessoa('Drak', 'Lians');
-
 console.log(pessoa01);
 console.log(pessoa02);
+
+pessoa01.metodoNormal();
+console.log(Pessoa.idadePadrao, Pessoa.cpfPadrao);
