@@ -1,7 +1,7 @@
 
 // A0029-abstract
 
-export class Personagem {
+export abstract class Personagem {
     constructor(
         protected nome: string,
         protected ataque: number,
@@ -18,9 +18,7 @@ export class Personagem {
         console.log(`${this.nome} agora tem ${this.vida - forcaAtaque} de vida.`);
     }
 
-    bordao(): void {
-        console.log("Força e honra!");
-    }
+    abstract bordao(): void;
 }
 
 export class Guerreira extends Personagem {
@@ -29,7 +27,11 @@ export class Guerreira extends Personagem {
     }
 };
 
-export class Monstro extends Personagem {};
+export class Monstro extends Personagem {
+    bordao(): void {
+        console.log("Aaaaaargh!");
+    }
+};
 
 const guerreira = new Guerreira("Xena", 100, 1000);
 const monstro = new Monstro("Hidra", 80, 2000);
