@@ -58,4 +58,6 @@ const maquinaDeEscrever = new MaquinaDeEscrever('IBM Model M');
 // console.log(maquinaDeEscrever.nome);
 
 escritor.ferramenta = caneta;
+escritor.ferramenta = maquinaDeEscrever;
+escritor.ferramenta = null;
 escritor.escrever();
