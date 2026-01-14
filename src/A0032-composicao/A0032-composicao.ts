@@ -2,7 +2,23 @@
 // A0032-composicao.ts
 
 export class Carro {
-    public readonly motor = new Motor();
+    private readonly motor = new Motor();
+
+    ligar(): void {
+        this.motor.ligar();
+    }
+
+    acelerar(): void {
+        this.motor.acelerar();
+    }
+
+    frear(): void {
+        this.motor.frear();
+    }
+
+    desligar(): void {
+        this.motor.desligar();
+    }
 }
 
 export class Motor {
@@ -24,4 +40,8 @@ export class Motor {
 }
 
 const carro = new Carro();
-carro.motor.ligar();
+
+carro.ligar();
+carro.acelerar();
+carro.frear();
+carro.desligar();
