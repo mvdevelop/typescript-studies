@@ -13,8 +13,6 @@ interface TipoNomeCompleto {
     nomeCompleto(): string;
 };
 
-// type Numero = number | string;
-
 type TipoPessoa01 = TipoNome & TipoSobrenome & TipoNomeCompleto;
 
 interface TipoPessoa02 extends TipoNome, TipoSobrenome, TipoNomeCompleto {}
@@ -27,5 +25,14 @@ export class Pessoa implements TipoPessoa02 {
     }
 }
 
+const pessoaObj: TipoPessoa02 = {
+    nomeCompleto() {
+        return this.nome + ' ' + this.sobrenome;
+    },
+    nome: "Drak",
+    sobrenome: "Lians",
+};
+
 const pessoa = new Pessoa('Vinicius', 'Dilly');
 console.log(pessoa.nomeCompleto());
+console.log(pessoaObj.nomeCompleto());
