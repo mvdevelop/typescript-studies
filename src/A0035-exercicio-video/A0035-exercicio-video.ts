@@ -24,15 +24,24 @@ export default class VideoPlayer implements VideoPlayerProtocol {
         this.stopButton = videoPlayerElements.stopButton;
     }
 
-    iniciarEventos(): void { }
+    iniciarEventos(): void {
+        this.playButton.addEventListener('click', () => {
+            console.log('OI');
+        });
+    }
 
-    playToggle(): void { }
+    playToggle(): void {
+        //
+    }
 
-    stop(): void { }
+    stop(): void {
+        //
+    }
 }
 
 const videoPlayer = new VideoPlayer({
-    videoPlayer: document.querySelector('.video') as HTML,
-    playButton: HTMLButtonElement;
-    stopButton: HTMLButtonElement;
+    videoPlayer: document.querySelector('.video') as HTMLVideoElement,
+    playButton: document.querySelector('.play') as HTMLButtonElement,
+    stopButton: document.querySelector('.stop') as HTMLButtonElement,
 });
+videoPlayer.iniciarEventos();
