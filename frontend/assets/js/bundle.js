@@ -20,6 +20,10 @@ class VideoPlayer {
         this.playButton.addEventListener('click', () => {
             this.playToggle();
         });
+        this.stopButton.addEventListener('click', () => {
+            this.videoPlayer.pause();
+            this.videoPlayer.currentTime = 0;
+        });
     }
     playToggle() {
         if (this.videoPlayer.paused) {
