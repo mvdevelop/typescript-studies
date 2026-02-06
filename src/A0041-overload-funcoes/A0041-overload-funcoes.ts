@@ -4,12 +4,14 @@
 type Adder = {
     (x: number): number;
     (x: number, y: number): number;
-    (x: string): string;
-    (x: boolean): boolean;
     (...args: number[]): number;
 };
 
-const adder: Adder = (x: number, y?: number, ...args: number[]): any => {
+const adder: Adder = (x: number, y?: number, ...args: number[]) => {
     if (args.length > 0) return args.reduce((s, val) => s + val, 0) + x + (y || 0);
-    return y !== undefined ? x + y : x;
+    return x + (y || 0);
 };
+
+console.log(adder(1));
+console.log(adder(1, 2));
+console.log(adder(1, 2, 3, 4, 5));
