@@ -7,7 +7,13 @@ interface PessoaProtocolo<T = string, U = number> {
     idade: U;
 }
 
-const aluno01: PessoaProtocolo<string, number> = {
+type PessoaProtocolo02<T = string, U = number> = {
+    nome: T;
+    sobrenome: T;
+    idade: U;
+}
+
+const aluno01: PessoaProtocolo02<string, number> = {
     nome: "Vinicius",
     sobrenome: "Marinho",
     idade: 28,
@@ -19,7 +25,7 @@ const aluno02: PessoaProtocolo<string, number> = {
     idade: 28,
 };
 
-const aluno03: PessoaProtocolo = {
+const aluno03: PessoaProtocolo02 = {
     nome: "Drak",
     sobrenome: "Lians",
     idade: 28,
