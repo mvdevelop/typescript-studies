@@ -14,6 +14,8 @@ const animal = {
 
 const nomeAnimal = obterChave(animal, 'nome');
 const vacinas = obterChave(animal, 'vacinas');
+const idadeAnimal = obterChave(animal, 'idade');
 
 console.log(nomeAnimal);
 console.log(vacinas);
+console.log(idadeAnimal);
