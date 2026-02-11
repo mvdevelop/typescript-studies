@@ -5,15 +5,33 @@ export class Pessoa<T, U> {
     constructor(public nome: T, public idade: U) {}
 }
 
-const pessoa01 = new Pessoa('Vinicius', 26);
-const pessoa02 = new Pessoa(['Maria'], 48);
-const pessoa03 = new Pessoa(['Marcos'], { idade : 32 });
-const pessoa04 = new Pessoa(['Marcos'], { idade : 32 });
+export class Pilha<T> {
+    private contador = 0;
+    private elementos: { [k: number]: T } = {};
 
-console.log(pessoa01.nome);
-console.log(pessoa01.idade);
+    push(elemento: T): void {
+        this.elementos[this.contador] = elemento;
+        this.contador++;
+    }
 
-console.log(pessoa02.nome);
-console.log(pessoa02.idade);
+    pop(): T | void {
+        if (this.estaVazia()) return undefined;
 
-console.log(pessoa03);
+        this.contador--;
+        const elemento = this.elementos[this.contador];
+        delete this.elementos[this.contador];
+        return elemento;
+    }
+
+    estaVazia(): boolean {
+        return this.contador === 0;
+    }
+
+    tamanho(): number {
+        return this.contador;
+    }
+
+    mostrarPilha(): void {
+        for (const chave in this.elementos)
+    }
+}
