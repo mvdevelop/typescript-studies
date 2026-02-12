@@ -32,6 +32,21 @@ export class Pilha<T> {
     }
 
     mostrarPilha(): void {
-        for (const chave in this.elementos)
+        for (const chave in this.elementos) {
+            console.log(this.elementos[chave]);
+        }
     }
+}
+
+const pilha = new Pilha<number | string>();
+pilha.push(1);
+pilha.push(2);
+pilha.push(3);
+pilha.push(4);
+pilha.push('vinicius');
+//const elemento01 = pilha.pop();
+pilha.mostrarPilha();
+
+while (!pilha.estaVazia()) {
+    console.log(pilha.pop());
 }
