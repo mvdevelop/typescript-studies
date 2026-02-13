@@ -16,6 +16,18 @@ type PessoaProtocol = {
     idade?: number;
 };
 
+// Required
+type PessoaRequired = Required<PessoaProtocol>;
+
+// Partial
+type PessoaPartial = Partial<PessoaRequired>;
+
+// Readonly
+type PessoaReadonly = Readonly<PessoaRequired>;
+
+// Pick
+type PessoaPick = Pick<PessoaRequired, 'nome' | 'sobrenome'>;
+
 const objeto02: PessoaProtocol = {
     nome: 'Vinicius',
     sobrenome: 'Marinho',
@@ -23,6 +35,9 @@ const objeto02: PessoaProtocol = {
 };
 
 console.log(objeto02);
+
+// Extract e Exclude
+type ABC = 'A' | 'B' | 'C';
 
 // Module mode
 export default 1;
