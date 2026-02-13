@@ -20,5 +20,5 @@ export function soma<T>(...args: T[]): number {
 }
 
 console.log(soma(1, 2, 3));
-console.log(soma(...[1, 2, 3, 'a', 'b', 'c']));
+console.log(soma(...[1, 2, 3, 'a', 'b', 'c', 1]));
 console.log(soma('a', 'b', 'c'));
