@@ -47,24 +47,29 @@ type AccountMongo = {
     _id: string;
     nome: string;
     idade: number;
+    sobrenome: string;
 };
 
-type AccountApi = {
+type AccountApi = Pick<AccountMongo, Exclude<keyof AccountMongo, '_id'>> & {
     id: string;
-    nome: string;
-    idade: number;
+
 };
 
 const accountMongo: AccountMongo = {
     _id: 'qpoeuhsdafp98qy40husaihrh',
     nome: 'Vinicius',
     idade: 28,
+    sobrenome: 'Marinho',
 };
 
 function mapAccount(accountMongo: AccountMongo): AccountApi {
     const { _id, ...accountData } = accountMongo;
     return { ...accountData, id: _id }
 };
+
+const accountApi = mapAccount(accountMongo);
+console.log('API:');
+console.log(accountApi);
 
 // Module mode
 export default 1;
