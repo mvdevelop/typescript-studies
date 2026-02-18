@@ -1,6 +1,16 @@
 
 // A0055-decorator-method
 
+function decorador(
+    classPrototype: any,
+    nomeMetodo: string,
+    descriptor: PropertyDescriptor
+): any {
+    console.log('classPrototype', classPrototype);
+    console.log('nomeMetodo', nomeMetodo);
+    console.log('descriptor', descriptor);
+}
+
 export class UmaPessoa {
     nome: string;
     sobrenome: string;
@@ -12,6 +22,7 @@ export class UmaPessoa {
         this.idade = idade;
     }
 
+    @decorador
     metodo(msg: string): string {
         return `${this.nome} ${this.sobrenome} tem ${this.idade} anos e diz: ${msg}`;
     }
