@@ -5,10 +5,14 @@ function decorador(
     classPrototype: any,
     nomeMetodo: string,
     descriptor: PropertyDescriptor
-): any {
+): PropertyDescriptor {
     console.log('classPrototype', classPrototype);
     console.log('nomeMetodo', nomeMetodo);
     console.log('descriptor', descriptor);
+    return {
+        writable: false,
+        enumerable: false,
+    };
 }
 
 export class UmaPessoa {
@@ -39,3 +43,9 @@ export class UmaPessoa {
         this.sobrenome = palavras.join(' ');
     }
 }
+
+const pessoa = new UmaPessoa('Vinicius', 'Dilly', 28);
+pessoa.metodo = () => 'Outro método';
+
+const metodo = pessoa.metodo('Olá, mundo!');
+console.log(metodo);
