@@ -1,19 +1,11 @@
 
-// A0055-decorator-method
+// A0056-decorator-param.ts
 
-function decorador(
-    classPrototype: any,
-    nomeMetodo: string,
-    descriptor: PropertyDescriptor,
-): PropertyDescriptor | void {
+function decorador(classPrototype: any, nomeMetodo: string | symbol, index: number): any {
     console.log('classPrototype', classPrototype);
     console.log('nomeMetodo', nomeMetodo);
-    console.log('descriptor', descriptor);
-    // return {
-    //     value: function (...args: string[]) {
-    //         return args[0].toUpperCase();
-    //     }
-    // };
+    console.log('indiceParametro', index);
+    return 'decorador';
 }
 
 export class UmaPessoa {
@@ -21,15 +13,18 @@ export class UmaPessoa {
     sobrenome: string;
     idade: number;
 
-    constructor(nome: string, sobrenome: string, idade: number) {
+    constructor(
+        @decorador nome: string,
+        @decorador sobrenome: string,
+        @decorador idade: number
+    ) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
     }
 
-    @decorador
-    metodo(msg: string): string {
-        return `${this.nome} ${this.sobrenome} tem ${this.idade} anos e diz: ${msg}`;
+    metodo(@decorador msg: string): string {
+        return `${msg} ${this.nome} ${this.sobrenome}`;
     }
 
     get nomeCompleto(): string {
@@ -45,8 +40,6 @@ export class UmaPessoa {
     }
 }
 
-const pessoa = new UmaPessoa('Vinicius', 'Dilly', 28);
-//pessoa.metodo = () => 'Outro método';
-
-const metodo = pessoa.metodo('Olá, mundo!');
+const pessoa = new UmaPessoa('Vinicius', 'Marinho', 31);
+const metodo = pessoa.metodo('Olá, Mundo!');
 console.log(metodo);
