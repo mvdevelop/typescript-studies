@@ -9,11 +9,6 @@ function decorador(
     console.log('classPrototype', classPrototype);
     console.log('nomeMetodo', nomeMetodo);
     console.log('descriptor', descriptor);
-    // return {
-    //     value: function (...args: string[]) {
-    //         return args[0].toUpperCase();
-    //     }
-    // };
 }
 
 export class UmaPessoa {

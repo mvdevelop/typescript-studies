@@ -1,29 +1,35 @@
 
 // A0056-decorator-param.ts
 
-function decorador(classPrototype: any, nomeMetodo: string | symbol, index: number): any {
-    console.log('classPrototype', classPrototype);
-    console.log('nomeMetodo', nomeMetodo);
-    console.log('indiceParametro', index);
-    return 'decorador';
+function decorador(classPrototype: any, nome: string | symbol): any {
+
+    let valorPropriedade: any;
+
+    return {
+        get: () => valorPropriedade,
+        set: (valor: any) => {
+            valorPropriedade = valor;
+        },
+    }
 }
 
 export class UmaPessoa {
+    @decorador
     nome: string;
     sobrenome: string;
     idade: number;
 
     constructor(
-        @decorador nome: string,
-        @decorador sobrenome: string,
-        @decorador idade: number
+        nome: string,
+        sobrenome: string,
+        idade: number
     ) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.idade = idade;
     }
 
-    metodo(@decorador msg: string): string {
+    metodo(msg: string): string {
         return `${msg} ${this.nome} ${this.sobrenome}`;
     }
 
