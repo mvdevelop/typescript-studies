@@ -8,6 +8,10 @@ function decorador(classPrototype: any, nome: string | symbol): any {
     return {
         get: () => valorPropriedade,
         set: (valor: any) => {
+            if (typeof valor === 'string') {
+                valorPropriedade = valor.split('').reverse().join('');
+                return;
+            }
             valorPropriedade = valor;
         },
     }
@@ -16,7 +20,9 @@ function decorador(classPrototype: any, nome: string | symbol): any {
 export class UmaPessoa {
     @decorador
     nome: string;
+    @decorador
     sobrenome: string;
+    @decorador
     idade: number;
 
     constructor(
