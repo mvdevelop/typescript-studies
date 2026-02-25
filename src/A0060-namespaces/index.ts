@@ -1,14 +1,14 @@
 
 namespace MeuNamespace {
-    const nome = "Vinicius";
+    const nome = "Marcos";
 
     export class PessoaDoNamespace {
         constructor(public nome: string) { }
     }
 
-    const pessoa = new PessoaDoNamespace('Vinicius');
+    const pessoa = new PessoaDoNamespace('Marcos');
     console.log(pessoa);
 }
 
-const pessoa = new PessoaDoNamespace('Marcos');
-console.log(pessoa.nome);
+const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace('Vinicius');
+console.log(pessoaDoNamespace);
