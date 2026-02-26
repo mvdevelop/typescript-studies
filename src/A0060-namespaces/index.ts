@@ -6,8 +6,8 @@ namespace MeuNamespace {
         constructor(public nome: string) { }
     }
 
-    const pessoa = new PessoaDoNamespace('Marcos');
-    console.log(pessoa);
+    const pessoaDoNamespace = new PessoaDoNamespace('Marcos');
+    console.log(pessoaDoNamespace);
 }
 
 const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace('Vinicius');
