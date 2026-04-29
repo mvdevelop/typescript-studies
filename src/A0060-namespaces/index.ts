@@ -1,6 +1,6 @@
 
 namespace MeuNamespace {
-    const nome = "Marcos";
+    const nomeDoNamespace = "Marcos";
 
     export class PessoaDoNamespace {
         constructor(public nome: string) { }
@@ -12,3 +12,5 @@ namespace MeuNamespace {
 
 const pessoaDoNamespace = new MeuNamespace.PessoaDoNamespace('Vinicius');
 console.log(pessoaDoNamespace);
+
+export default MeuNamespace;
