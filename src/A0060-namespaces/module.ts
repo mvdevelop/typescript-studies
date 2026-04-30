@@ -19,4 +19,5 @@ console.log(pessoaDoNamespace);
 console.log(MeuNamespace.nomeDoNamespace);
 console.log(MeuNamespace.OutroNamespace.nomeDoOutroNamespace);
 
-//export default 1;
+const constDoNamespace = 'Valor da const do namespace';
+console.log(constDoNamespace);
