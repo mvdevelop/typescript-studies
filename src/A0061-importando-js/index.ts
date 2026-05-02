@@ -1,6 +1,6 @@
 
 import { soma } from "./modulo";
 
-const resultado = soma(2, 3) as number;
+const result = soma(2, 3) as number;
 
-console.log(resultado);
+console.log(result);
